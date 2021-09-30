@@ -1,0 +1,21 @@
+header {
+    display: flex;
+    padding: 0 50px;
+    align-items: center;
+    background-color: $Dark;
+    justify-content: space-between;
+    h1 {
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 2px;
+    }
+    i {
+        color: $Dim;
+        cursor: pointer;
+        font-size: 18px;
+        &:hover, &.open {
+            color: $Word;
+        }
+    }
+}

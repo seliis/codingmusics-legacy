@@ -1,0 +1,33 @@
+nav {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background-color: $Dark;
+    ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: right;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        li {
+            width: 75%;
+            color: $Dim;
+            cursor: pointer;
+            font-size: 36px;
+            font-weight: 100;
+            text-align: right;
+            padding: 10px 50px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            &:hover {
+                color: $Word;
+            }
+        }
+    }
+}
