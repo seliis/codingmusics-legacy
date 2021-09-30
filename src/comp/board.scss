@@ -1,0 +1,32 @@
+#board {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    .item {
+        width: 75%;
+        padding: 25px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        letter-spacing: 2px;
+        background-color: $Grey;
+        text-transform: uppercase;
+        h1 {
+            font-size: 20px;
+            font-weight: 400;
+            padding-bottom: 2.5px;
+        }
+        h2 {
+            color: $Yellow;
+            font-size: 12px;
+            font-weight: 400;
+            padding-top: 2.5px;
+        }
+        &:hover {
+            background-color: $Dark;
+        }
+    }
+}

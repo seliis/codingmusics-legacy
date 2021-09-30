@@ -1,19 +1,24 @@
 // Google Font
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&family=Roboto:wght@100;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
 
 // Font
+$Raleway: "Raleway", sans-serif;
 $Roboto: "Roboto", sans-serif;
 
 // Color
 $Dim: #C2C2C2;
 $Red: #FD2F4A;
 $Back: #121212;
+$Grey: #1F1F1F;
 $Word: #FEFDFB;
 $Dark: #010204;
 $Yellow: #E2B640;
 
 // File
 @import "./comp/header.scss";
+@import "./comp/board.scss";
+@import "./comp/home.scss";
 @import "./comp/menu.scss";
 
 * {
@@ -30,11 +35,24 @@ body {
     height: 100vh;
     font-family: $Roboto;
     background-color: $Back;
+    #root {
+        width: 100%;
+        height: 100%;
+    }
 }
 
-main {
+#app {
     width: 100%;
     height: 100%;
     display: grid;
     grid-template: 75px 1fr / 1fr;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    &.board {
+        grid-template: 1fr 150px / 1fr;
+    }
 }

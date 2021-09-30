@@ -9,7 +9,7 @@ class Header extends React.Component {
                         window.location.href = "/"
                     }
                 }>
-                    CODING MUSICS
+                    CODING MUSICS 24/7
                 </h1>
                 <i
                     className={

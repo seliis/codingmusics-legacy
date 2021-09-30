@@ -12,13 +12,13 @@ class Menu extends React.Component {
     getNavs() {
         const map = this.props.navMenus
         const code = []; for(let i=0; i<map.length; i++) {
-            const name = map[i].name
+            const genre = map[i].genre
             code.push(
-                <li onClick={
+                <li key={`nav-${i}`} onClick={
                     () => {this.setNavs(i)}
                     }
                 >
-                    {name}
+                    {genre}
                 </li>
             )
         }

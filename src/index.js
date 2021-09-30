@@ -12,13 +12,13 @@ import Home from "./comp/home"
 // Variable
 const navMenus = [
     {
-        ["name"]: "lofi"
+        ["genre"]: "lofi"
     },
     {
-        ["name"]: "city"
+        ["genre"]: "city"
     },
     {
-        ["name"]: "classic"
+        ["genre"]: "classic"
     }
 ]
 
@@ -27,7 +27,8 @@ class Application extends React.Component {
     constructor(p) { super(p)
         this.state = {
             menuState: false,
-            presGenre: 0
+            presGenre: 0,
+            isHome: true
         }
 
         // Handler Binding
@@ -35,22 +36,33 @@ class Application extends React.Component {
         this.menuStateFunc = this.menuStateFunc.bind(this)
     }
 
-    setGenre(g) {
-        if (this.state.presGenre == g) {
+    setGenre(genre) {
+        if (this.state.presGenre == genre) {
             return null
         }
         this.setState({
-            presGenre: g
+            presGenre: genre
+        })
+    }
+
+    setHome(bool) {
+        if (this.state.isHome == bool) {
+            return null
+        }
+        this.setState({
+            isHome: bool
         })
     }
 
     getPage() {
         const path = window.location.pathname.slice(1)
         if (path == "") {
+            this.setHome(true)
             return <Home/>
         }
         if (path == "board") {
-            return <Board/>
+            this.setHome(false)
+            return <Board genre={this.state.presGenre}/>
         }
         window.location.href = "/"
     }
@@ -63,12 +75,12 @@ class Application extends React.Component {
 
     render() {
         return (
-            <main>
+            <div id="app">
                 <Header
                     menuState={this.state.menuState}
                     menuStateFunc={this.menuStateFunc}
                 />
-                <section>
+                <section className={this.state.isHome ? "home" : "board"}>
                     {
                         this.state.menuState ? <Menu
                             navMenus={navMenus}
@@ -76,9 +88,14 @@ class Application extends React.Component {
                             menuStateFunc={this.menuStateFunc}
                         /> : null
                     }
-                    {this.getPage()}
+                    {
+                        this.getPage()
+                    }
+                    {
+                        this.state.isHome ? null : <div>Player</div>
+                    }
                 </section>
-            </main>
+            </div>
         )
     }
 }

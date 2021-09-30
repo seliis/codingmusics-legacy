@@ -24,9 +24,10 @@ nav {
             text-align: right;
             padding: 10px 50px;
             letter-spacing: 5px;
+            font-family: $Raleway;
             text-transform: uppercase;
             &:hover {
-                color: $Word;
+                color: $Red;
             }
         }
     }
