@@ -5,6 +5,7 @@ import ReactDom from "react-dom"
 
 // Component
 import Header from "./comp/header"
+import Player from "./comp/player"
 import Board from "./comp/board"
 import Menu from "./comp/menu"
 import Home from "./comp/home"
@@ -31,7 +32,7 @@ class Application extends React.Component {
             isHome: true
         }
 
-        // Handler Binding
+        // Binding
         this.setGenre = this.setGenre.bind(this)
         this.menuStateFunc = this.menuStateFunc.bind(this)
     }
@@ -92,7 +93,7 @@ class Application extends React.Component {
                         this.getPage()
                     }
                     {
-                        this.state.isHome ? null : <div>Player</div>
+                        this.state.isHome ? null : <Player/>
                     }
                 </section>
             </div>

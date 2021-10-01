@@ -1,0 +1,57 @@
+#player {
+    #player-pannel {
+        color: $Dim;
+        height: 100%;
+        display: flex;
+        padding: 0 100px;
+        align-items: center;
+        background-color: $Dark;
+        justify-content: space-between;
+        @include Responsive {
+            padding: 0 50px;
+        }
+        #player-master {
+            i {
+                cursor: pointer;
+                font-size: 72px;
+                @include Responsive {
+                    font-size: 48px;
+                }
+            }
+        }
+        #player-volume {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            transform: translateY(-37.5%);
+            #player-volume-value {
+                font-size: 24px;
+                font-weight: 100;
+                letter-spacing: 2px;
+                padding-bottom: 15px;
+                @include Responsive {
+                    font-size: 16px;
+                }
+            }
+            input {
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+        #player-mute {
+            i {
+                color: $Grey;
+                cursor: pointer;
+                font-size: 48px;
+                @include Responsive {
+                    font-size: 36px;
+                }
+            }
+            &.muted i {
+                color: $Dim;
+            }
+        }
+    }
+}

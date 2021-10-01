@@ -17,6 +17,10 @@ class Board extends React.Component {
                 resp => resp.json()
             ).then(
                 (resp) => {
+                    if (resp.items.length != 1) {
+                        console.log("[cms] not exist youtube id: " + id)
+                        return null
+                    }
                     const map = resp.items[0].snippet
                     data.push(
                         {

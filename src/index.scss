@@ -1,12 +1,11 @@
-// Google Font
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&family=Roboto:wght@100;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
 
-// Font
+$Noto: "Noto Sans KR", sans-serif;
 $Raleway: "Raleway", sans-serif;
 $Roboto: "Roboto", sans-serif;
 
-// Color
 $Dim: #C2C2C2;
 $Red: #FD2F4A;
 $Back: #121212;
@@ -15,11 +14,11 @@ $Word: #FEFDFB;
 $Dark: #010204;
 $Yellow: #E2B640;
 
-// File
-@import "./comp/header.scss";
-@import "./comp/board.scss";
-@import "./comp/home.scss";
-@import "./comp/menu.scss";
+@mixin Responsive {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
 
 * {
     margin: 0;
@@ -56,3 +55,9 @@ section {
         grid-template: 1fr 150px / 1fr;
     }
 }
+
+@import "./comp/header.scss";
+@import "./comp/player.scss";
+@import "./comp/board.scss";
+@import "./comp/home.scss";
+@import "./comp/menu.scss";

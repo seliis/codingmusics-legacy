@@ -6,6 +6,9 @@ class Header extends React.Component {
             <header>
                 <h1 onClick={
                     () => {
+                        if (window.location.pathname.slice(1) == "") {
+                            return null
+                        }
                         window.location.href = "/"
                     }
                 }>
