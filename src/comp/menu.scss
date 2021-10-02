@@ -6,28 +6,32 @@ nav {
     position: absolute;
     align-items: center;
     justify-content: center;
-    background-color: $Dark;
+    background-color: $Dim;
     ul {
         width: 100%;
         height: 100%;
         display: flex;
-        align-items: right;
         align-items: center;
         flex-direction: column;
         justify-content: center;
         li {
             width: 75%;
-            color: $Dim;
             cursor: pointer;
             font-size: 36px;
-            font-weight: 100;
+            font-weight: 400;
             text-align: right;
+            color: $Foreground;
             padding: 10px 50px;
             letter-spacing: 5px;
             font-family: $Raleway;
             text-transform: uppercase;
             &:hover {
                 color: $Red;
+                text-shadow: 1px 1px 1px black;
+            }
+            @include Responsive {
+                padding: 5% 1%;
+                font-size: 5rem;
             }
         }
     }

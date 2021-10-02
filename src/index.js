@@ -29,10 +29,12 @@ class Application extends React.Component {
         this.state = {
             menuState: false,
             presGenre: 0,
+            playId: null,
             isHome: true
         }
 
         // Binding
+        this.setPlay = this.setPlay.bind(this)
         this.setGenre = this.setGenre.bind(this)
         this.menuStateFunc = this.menuStateFunc.bind(this)
     }
@@ -55,6 +57,15 @@ class Application extends React.Component {
         })
     }
 
+    setPlay(id) {
+        if (id == this.state.playId) {
+            return null
+        }
+        this.setState({
+            playId: id
+        })
+    }
+
     getPage() {
         const path = window.location.pathname.slice(1)
         if (path == "") {
@@ -63,7 +74,10 @@ class Application extends React.Component {
         }
         if (path == "board") {
             this.setHome(false)
-            return <Board genre={this.state.presGenre}/>
+            return <Board
+                genre={this.state.presGenre}
+                setPlay={this.setPlay}
+            />
         }
         window.location.href = "/"
     }
@@ -93,7 +107,9 @@ class Application extends React.Component {
                         this.getPage()
                     }
                     {
-                        this.state.isHome ? null : <Player/>
+                        this.state.isHome ? null : <Player
+                            playId={this.state.playId}
+                        />
                     }
                 </section>
             </div>

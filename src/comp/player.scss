@@ -1,21 +1,24 @@
 #player {
     #player-pannel {
-        color: $Dim;
         height: 100%;
         display: flex;
         padding: 0 100px;
         align-items: center;
-        background-color: $Dark;
+        background-color: $Black;
         justify-content: space-between;
         @include Responsive {
-            padding: 0 50px;
+            padding: 0 10%;
         }
         #player-master {
             i {
+                color: $Comment;
                 cursor: pointer;
                 font-size: 72px;
+                &:hover {
+                    color: $Foreground;
+                }
                 @include Responsive {
-                    font-size: 48px;
+                    font-size: 5rem;
                 }
             }
         }
@@ -27,30 +30,41 @@
             justify-content: center;
             transform: translateY(-37.5%);
             #player-volume-value {
-                font-size: 24px;
-                font-weight: 100;
+                color: $Green;
+                cursor: default;
+                font-size: 36px;
+                font-weight: 700;
+                font-family: $Gamja;
                 letter-spacing: 2px;
-                padding-bottom: 15px;
+                padding-bottom: 7.5px;
                 @include Responsive {
-                    font-size: 16px;
+                    font-size: 5rem;
+                    padding-bottom: 15px;
                 }
             }
             input {
                 width: 100%;
                 cursor: pointer;
             }
+            @include Responsive {
+                width: 60%;
+                transform: translateY(-42.5%);
+            }
         }
         #player-mute {
             i {
-                color: $Grey;
+                color: $Comment;
                 cursor: pointer;
                 font-size: 48px;
+                &:hover {
+                    color: $Foreground;
+                }
                 @include Responsive {
-                    font-size: 36px;
+                    font-size: 5rem;
                 }
             }
             &.muted i {
-                color: $Dim;
+                color: $Red;
             }
         }
     }

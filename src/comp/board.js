@@ -1,8 +1,10 @@
 import React from "react"
+import Loading from "./loading"
 
 class Board extends React.Component {
     constructor(p) { super(p)
         this.state = {
+            active: null,
             pass: false,
             data: null,
             err: null
@@ -18,14 +20,15 @@ class Board extends React.Component {
             ).then(
                 (resp) => {
                     if (resp.items.length != 1) {
-                        console.log("[cms] not exist youtube id: " + id)
+                        console.log("[cms] unable to load: " + id)
                         return null
                     }
-                    const map = resp.items[0].snippet
+                    const snippet = resp.items[0].snippet
                     data.push(
                         {
-                            name: map.title,
-                            chan: map.channelTitle
+                            id: id,
+                            name: snippet.title,
+                            chan: snippet.channelTitle
                         }
                     )
                 }
@@ -54,6 +57,20 @@ class Board extends React.Component {
         )
     }
 
+    setActive(index) {
+        this.setState({
+            active: index
+        })
+    }
+
+    getActive(index) {
+        if (this.state.active == index) {
+            return "active"
+        } else {
+            return ""
+        }
+    }
+
     makeBoard() {
         let code = []
         const data = this.state.data
@@ -61,7 +78,11 @@ class Board extends React.Component {
             const name = data[i].name
             const chan = data[i].chan
             code.push(
-                <div className="item" key={`music-${i}`}>
+                <div key={`item-${i}`} className={`item ${this.getActive(i)}`}
+                    onClick={() => {
+                        this.setActive(i)
+                        this.props.setPlay(data[i].id)
+                    }}>
                     <h1>{name}</h1>
                     <h2>{chan}</h2>
                 </div>
@@ -78,7 +99,7 @@ class Board extends React.Component {
             </div>
         } else if (!pass) {
             return <div>
-                Loading...
+                <Loading/>
             </div>
         } else {
             return (

@@ -1,4 +1,5 @@
 import React from "react"
+import ReactPlayer from "react-player/youtube"
 
 class Player extends React.Component {
     constructor(p) { super(p)
@@ -32,7 +33,7 @@ class Player extends React.Component {
         })
     }
 
-    makePlayer() {
+    makePlayerPannel() {
         const code = <div id="player-pannel">
             <div id="player-master" onClick={this.setMaster}>
                 {
@@ -61,7 +62,22 @@ class Player extends React.Component {
     render() {
         return (
             <div id="player">
-                {this.makePlayer()}
+                <ReactPlayer url={"https://www.youtube.com/watch?v=" + this.props.playId}
+                    playing={this.state.playing}
+                    volume={this.state.volume}
+                    muted={this.state.muted}
+                    loop={true}
+                    height="0"
+                    width="0"
+                    config={{
+                        youtube: {
+                            playerVars: {
+                                autoplay: 1
+                            }
+                        }
+                    }}
+                />
+                {this.makePlayerPannel()}
             </div>
         )
     }

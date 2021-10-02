@@ -4,7 +4,10 @@ class Home extends React.Component {
     render() {
         return (
             <div id="home">
-                <img src="home.gif"/>
+                <img src="cat.jpg"/>
+                <h1>
+                    Meanwhile in Kunsan
+                </h1>
             </div>
         )
     }

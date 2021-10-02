@@ -6,18 +6,21 @@ class Header extends React.Component {
             <header>
                 <h1 onClick={
                     () => {
+                        if (this.props.menuState) {
+                            this.props.menuStateFunc()
+                        }
                         if (window.location.pathname.slice(1) == "") {
                             return null
                         }
                         window.location.href = "/"
                     }
                 }>
-                    CODING MUSICS 24/7
+                    CODING MUSICS
                 </h1>
                 <i
                     className={
                         `fas fa-bars ${
-                            this.props.menuState ? "open" : "close"
+                            this.props.menuState ? "open" : null
                         }`
                     }
                     onClick={
