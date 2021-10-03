@@ -1,5 +1,6 @@
 import React from "react"
 import ReactPlayer from "react-player/youtube"
+import VolumeRange from "./volrange"
 
 class Player extends React.Component {
     constructor(p) { super(p)
@@ -27,9 +28,9 @@ class Player extends React.Component {
         })
     }
 
-    setVolume(e) {
+    setVolume(eventData) {
         this.setState({
-            volume: e.target.valueAsNumber
+            volume: eventData.target.valueAsNumber
         })
     }
 
@@ -41,16 +42,13 @@ class Player extends React.Component {
                 }
             </div>
             <div id="player-volume">
-                <div id="player-volume-value">
-                    {Math.floor(this.state.volume * 100)}
-                </div>
-                <input type="range" min="0" max="1" step="any"
-                    value={this.state.volume}
-                    onChange={this.setVolume}
+                <VolumeRange
+                    amount={this.state.volume}
+                    setVolume={this.setVolume}
                 />
             </div>
             <div id="player-mute" className={
-                this.state.muted ? "muted" : "not-muted"
+                this.state.muted ? "muted" : ""
             } onClick={this.setMuted}>
                 <i className="fas fa-volume-mute"></i>
             </div>

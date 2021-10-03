@@ -14,41 +14,20 @@
                 color: $Comment;
                 cursor: pointer;
                 font-size: 72px;
-                &:hover {
-                    color: $Foreground;
-                }
                 @include Responsive {
                     font-size: 5rem;
                 }
             }
         }
         #player-volume {
-            width: 50%;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: center;
-            transform: translateY(-37.5%);
-            #player-volume-value {
-                color: $Green;
-                cursor: default;
-                font-size: 36px;
-                font-weight: 700;
-                font-family: $Gamja;
-                letter-spacing: 2px;
-                padding-bottom: 7.5px;
-                @include Responsive {
-                    font-size: 5rem;
-                    padding-bottom: 15px;
-                }
-            }
-            input {
-                width: 100%;
-                cursor: pointer;
+            width: 75%;
+            height: 100%;
+            overflow: visible;
+            #volume-range, input {
+                overflow: visible;
             }
             @include Responsive {
                 width: 60%;
-                transform: translateY(-42.5%);
             }
         }
         #player-mute {
@@ -56,9 +35,6 @@
                 color: $Comment;
                 cursor: pointer;
                 font-size: 48px;
-                &:hover {
-                    color: $Foreground;
-                }
                 @include Responsive {
                     font-size: 5rem;
                 }

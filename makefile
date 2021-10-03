@@ -1,7 +1,7 @@
 path = "/mnt/d/cms"
 
 win:
-	@if [-d $(path)]; then \
+	@if [ -d $(path) ]; then \
 		echo "Removing Legacies"; \
 		rm -rf $(path); \
 	fi
