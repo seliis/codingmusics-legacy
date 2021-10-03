@@ -9,6 +9,12 @@ class Menu extends React.Component {
         this.props.menuStateFunc()
     }
 
+    goAbout() {
+        if (window.location.pathname.slice(1) != "about") {
+            window.location.href = "/about"
+        }
+    }
+
     getNavs() {
         const map = this.props.navMenus
         const code = []; for(let i=0; i<map.length; i++) {
@@ -22,6 +28,13 @@ class Menu extends React.Component {
                 </li>
             )
         }
+        code.push(
+            <li key="about" className="about" onClick={
+                () => {this.goAbout()}
+            }>
+                About
+            </li>
+        )
         return code
     }
 

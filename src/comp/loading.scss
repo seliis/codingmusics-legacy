@@ -4,9 +4,9 @@
     align-items: center;
     justify-content: center;
     i {
-        color: $Blue;
+        color: $Comment;
         font-size: 100px;
-        animation: spinning 250ms infinite linear;
+        animation: spinning 1000ms infinite linear;
         @keyframes spinning {
             100% {
                 transform: rotate(360deg);

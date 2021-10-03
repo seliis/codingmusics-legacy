@@ -20,11 +20,12 @@
         justify-content: center;
         background-color: $Dark;
         text-transform: uppercase;
+        text-shadow: 1px 1px 3px $Black;
         &.active {
+            border: 5px solid $Blue;
             background-color: $Selection;
-            border: 5px solid $Comment;
             @include Responsive {
-                border: 0.5rem solid $Comment;
+                border: 0.5rem solid $Blue;
             }
         }
         @include Responsive {

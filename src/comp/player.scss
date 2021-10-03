@@ -18,10 +18,10 @@
                 }
             }
             &.play {
-                color: $Red;
+                color: $Comment;
             }
             &.pause {
-                color: $Green;
+                color: $Blue;
             }
         }
         #player-volume {
@@ -45,7 +45,7 @@
                 }
             }
             &.muted i {
-                color: $Red;
+                color: $Blue;
             }
         }
     }

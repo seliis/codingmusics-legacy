@@ -7,6 +7,7 @@ import ReactDom from "react-dom"
 import Header from "./comp/header"
 import Player from "./comp/player"
 import Board from "./comp/board"
+import About from "./comp/about"
 import Menu from "./comp/menu"
 import Home from "./comp/home"
 
@@ -78,6 +79,9 @@ class Application extends React.Component {
                 genre={this.state.presGenre}
                 setPlay={this.setPlay}
             />
+        }
+        if (path == "about") {
+            return <About/>
         }
         window.location.href = "/"
     }

@@ -15,7 +15,7 @@ class Header extends React.Component {
                         window.location.href = "/"
                     }
                 }>
-                    CODING MUSICS
+                    MUSICODE
                 </h1>
                 <i
                     className={

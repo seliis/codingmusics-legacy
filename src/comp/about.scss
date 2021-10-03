@@ -1,0 +1,70 @@
+#about {
+    display: flex;
+    cursor: default;
+    align-items: center;
+    justify-content: center;
+    background-color: $Background;
+    @include Responsive {
+        flex-direction: column;
+        text-align: center;
+    }
+    img {
+        width: 360px;
+        margin: 50px;
+        height: 360px;
+        border-radius: 100%;
+        filter: contrast(125%) grayscale(50%);
+        border: 5px solid $Black;
+        @include Responsive {
+            width: 480px;
+            height: 480px;
+        }
+    }
+    #about-info {
+        font-family: $Mono;
+        #about-info-name {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+            font-size: 48px;
+            @include Responsive {
+                font-size: 72px;
+            }
+        }
+        #about-info-job {
+            text-transform: capitalize;
+            padding-bottom: 28px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 24px;
+            color: $Purple;
+            @include Responsive {
+                padding-bottom: 52px;
+                font-size: 32px;
+            }
+        }
+        .about-info-act-item {
+            letter-spacing: 1px;
+            font-size: 20px;
+            color: $Comment;
+            padding: 2px 0;
+            &:hover {
+                color: $Foreground;
+            }
+            @include Responsive {
+                font-size: 24px;
+            }
+        }
+        #about-info-app {
+            padding-top: 48px;
+            font-weight: 700;
+            font-size: 16px;
+            color: $Blue;
+            @include Responsive {
+                padding-top: 72px;
+                font-size: 20px;
+            }
+        }
+    }
+    
+}

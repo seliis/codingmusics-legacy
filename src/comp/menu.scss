@@ -18,15 +18,21 @@ nav {
             width: 75%;
             cursor: pointer;
             font-size: 36px;
-            font-weight: 400;
+            font-weight: 700;
             text-align: right;
             color: $Foreground;
             padding: 10px 50px;
             letter-spacing: 5px;
             font-family: $Raleway;
             text-transform: uppercase;
+            &.about {
+                color: $Comment;
+                &:hover {
+                    color: $Blue;
+                }
+            }
             &:hover {
-                color: $Red;
+                color: $Blue;
                 text-shadow: 1px 1px 1px black;
             }
             @include Responsive {

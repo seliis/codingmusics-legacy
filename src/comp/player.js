@@ -23,9 +23,15 @@ class Player extends React.Component {
     }
 
     setMuted() {
-        this.setState({
-            muted: !this.state.muted
-        })
+        if (this.state.volume != 0) {
+            this.setState({
+                volume: 0
+            })
+        } else {
+            this.setState({
+                volume: 0.1
+            })
+        }
     }
 
     setVolume(eventData) {
@@ -52,7 +58,7 @@ class Player extends React.Component {
                 />
             </div>
             <div id="player-mute" className={
-                this.state.muted ? "muted" : ""
+                this.state.volume == 0 ? "muted" : ""
             } onClick={this.setMuted}>
                 <i className="fas fa-volume-mute"></i>
             </div>
