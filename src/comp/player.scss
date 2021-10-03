@@ -11,12 +11,17 @@
         }
         #player-master {
             i {
-                color: $Comment;
                 cursor: pointer;
                 font-size: 72px;
                 @include Responsive {
                     font-size: 5rem;
                 }
+            }
+            &.play {
+                color: $Red;
+            }
+            &.pause {
+                color: $Green;
             }
         }
         #player-volume {

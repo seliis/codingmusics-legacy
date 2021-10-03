@@ -36,7 +36,11 @@ class Player extends React.Component {
 
     makePlayerPannel() {
         const code = <div id="player-pannel">
-            <div id="player-master" onClick={this.setMaster}>
+            <div id="player-master" onClick={this.setMaster}
+                className={
+                    this.state.playing ? "play" : "pause"
+                }
+            >
                 {
                     this.state.playing ? <i className="far fa-pause-circle"/> : <i className="far fa-play-circle"/>
                 }
